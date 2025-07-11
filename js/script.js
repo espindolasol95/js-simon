@@ -8,7 +8,8 @@ const message=document.getElementById('messagge');
 const inputGroup= document.getElementById ('inputGroup');
 
 const totalNumbers= 5;
-const countdown= 30;
+const countdownSeconds= 30;
 
 
 let generateNumbers = [];
+
