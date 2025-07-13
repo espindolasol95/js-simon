@@ -49,8 +49,15 @@ function showNumbers (numbers){
 
  countdown.textContent = secondsLeft
 
- const timer = setInterval(() =>{
+const timer = setInterval(() =>{
     secondsLeft --; //decremento i seccondi
     countdown.textContent = secondsLeft; //aggiorna il numero mostrato
-    
+
+ //dopo 10 sec nascondo i numeri e mostro gli inpunt
+    if(secondsLeft=== countdownSeconds-10);
+    numberList.innerHTML ='';  //nasconodo i numeri
+    instructions.textContent= 'Inserisci i numeri che ricordi:';
+    answersForm.classList.remove ('d-none'); //faccio comparire il form
+
  }
+ //quando finisce il tempo
