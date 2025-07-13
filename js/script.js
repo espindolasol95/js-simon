@@ -44,20 +44,30 @@ function showNumbers (numbers){
  }
  
  //funzione per il countdown di 30 sec
+ //(per questa  parte ho cercaro il come farla su internet e ho fatto passo a passo non e stata 100% di mio
+ // in piu ho cancelato tutto e sistemato le parentesi graffa. e piccoli errori)
 
  let secondsLeft = countdownSeconds; //contatore che parte da 30
 
  countdown.textContent = secondsLeft
 
-const timer = setInterval(() =>{
-    secondsLeft --; //decremento i seccondi
-    countdown.textContent = secondsLeft; //aggiorna il numero mostrato
+const timer = setInterval(() => {
+    secondsLeft--; // ogni secondo diminuisce
+    countdown.textContent = secondsLeft; // aggiorno il numero mostrato
 
- //dopo 10 sec nascondo i numeri e mostro gli inpunt
-    if(secondsLeft=== countdownSeconds-10);
-    numberList.innerHTML ='';  //nasconodo i numeri
-    instructions.textContent= 'Inserisci i numeri che ricordi:';
-    answersForm.classList.remove ('d-none'); //faccio comparire il form
+    // Dopo 10 secondi, nascondo i numeri e mostro gli input
+    if (secondsLeft === countdownSeconds - 10) {
+      numbersList.innerHTML = ''; // nascondo i numeri
+      instructions.textContent = 'Inserisci i numeri che ricordi:';
+      answersForm.classList.remove('d-none'); // faccio comparire il form
+    }
 
- }
- //quando finisce il tempo
+    // Quando finisce il tempo
+    if (secondsLeft <= 0) {
+      clearInterval(timer); // fermo il countdown
+      countdown.textContent = 'Tempo scaduto!';
+      instructions.textContent = 'Inserisci i numeri che ricordi e premi Conferma.';
+    }
+}, 1000); // ogni 1000 millisecondi (1 secondo)
+
+
