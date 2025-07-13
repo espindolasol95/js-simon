@@ -14,18 +14,24 @@ let generateNumbers = []; //array per salvare i numeri generati random
 // generatore di numeri random
 function generateRandomNumbers(total , min = 1, max=50){
     const range= [];
-    for (let i = min; i <= max; i ++){
+for (let i = min; i <= max; i ++){
         range.push (i);
     }
-}    
+    
 
 
-    for (let i = range.length - 1; i > 0; i--) {
+for (let i = range.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1)); // numero casiali da 0 a i 
       [range[i], range[j]] = [range[j], range[i]]; // scambio i due valori 
     }
      //estituire il risultato finale della funzione cioè un array con N numeri casuali unici
     return range.slice (0,total); 
+}
+
+//funzione per mostrare  i numeri in pagina
 
 
-    
+function showNumbers (numbers){
+    numberList.innerHTML=''; //svuoto la lista prima di inserire nuovi elementi
+
+}
