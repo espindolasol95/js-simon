@@ -23,3 +23,7 @@ function generateRandomNumbers(total , min = 1, max=50){
       const j = Math.floor(Math.random() * (i + 1));
       [range[i], range[j]] = [range[j], range[i]];
     }
+     //estituire il risultato finale della funzione cioè un array con N numeri casuali unici
+    return range.slice (0,total); 
+
+    
