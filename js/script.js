@@ -40,6 +40,17 @@ function showNumbers (numbers){
  const li = document. createElement('li'); //creo un li
  li.textContent = numbers [i]; //metto il numero dentro
  numberList.appendChild(li); // lo aggiungo alla lista
- 
+
  }
  
+ //funzione per il countdown di 30 sec
+
+ let secondsLeft = countdownSeconds; //contatore che parte da 30
+
+ countdown.textContent = secondsLeft
+
+ const timer = setInterval(() =>{
+    secondsLeft --; //decremento i seccondi
+    countdown.textContent = secondsLeft; //aggiorna il numero mostrato
+    
+ }
