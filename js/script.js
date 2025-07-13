@@ -35,3 +35,11 @@ function showNumbers (numbers){
     numberList.innerHTML=''; //svuoto la lista prima di inserire nuovi elementi
 
 }
+ //per ogni numero creo un <li> e lo aggiungo alla lista
+ for (let i= 0; i <numbers.length; i++){
+ const li = document. createElement('li'); //creo un li
+ li.textContent = numbers [i]; //metto il numero dentro
+ numberList.appendChild(li); // lo aggiungo alla lista
+ 
+ }
+ 
