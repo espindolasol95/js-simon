@@ -62,7 +62,7 @@ const generateRandomNumbers=( min, max) =>{
   //nel array di queli generate casulmente
 
   const confirm= (e)=> {
-    e.preventDefault();
+    
     const userNumbers = [];
     const correctAnswers = [];
     for(let i=0; i<inputs.length; i++ ){
@@ -74,5 +74,17 @@ const generateRandomNumbers=( min, max) =>{
         correctAnswers.push(userNumbers[i]);
       }
     }
-  }
+    //mostriamo il messaggio all'utente
+    message.classList.remove('text-danger');
+    message.classList.add('text-success');
 
+    message.innerText =  `hai indovinato  ${correctAnswers.length} (${correctAnswers}) ` ;
+
+
+  }
+  button.addEventListener('click',(e)=>{
+    e.preventDefault();
+    confirm();
+  });
+  
+    
