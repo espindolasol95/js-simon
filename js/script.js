@@ -57,11 +57,22 @@ const generateRandomNumbers=( min, max) =>{
 
   },1000);
 
-  //definisco la funzio che al click del pulsante mi recupera
-  //i numeri che l'utente ha inserito e controla quali sono presente
-  //nel array di quelli generate casulmente
+  //definisco la funzione che al click del pulsante mi recupera
+  //i numeri che l'utente ha inserito e controlla quali sono presente
+  //nel array di queli generate casulmente
 
   const confirm= (e)=> {
     e.preventDefault();
+    const userNumbers = [];
+    const correctAnswers = [];
+    for(let i=0; i<inputs.length; i++ ){
+      userNumbers.push(parseInt(inputs[i].value));
+
+    }
+    for(let i=0; i<userNumbers.length; i++){
+      if(numbers.includes(userNumbers[i])){
+        correctAnswers.push(userNumbers[i]);
+      }
+    }
   }
 
