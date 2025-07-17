@@ -37,7 +37,7 @@ const generateRandomNumbers=( min, max) =>{
  for (let i=0; i<numbers.length; i++){
   numberList.innerHTML += `<li class="list-item">${numbers[i]}</li>`;
  }
-
+  let time = countdownSeconds;
   //mostro il valore dentro l'elemento countdown
   countdownElement.innerText = time;
   //vado a definire il set interval che mi scala i secondi e 
@@ -46,5 +46,22 @@ const generateRandomNumbers=( min, max) =>{
     time --,
     countdownElement.innerText=time;
 
-  },1000)
+    if(time===0){
+      clearInterval(countdown);
+
+      form.classList.remove('d-none');
+      numberList.classList.add('d-none');
+      instructions.innerHTML= 'Digita i numeri che ricordi e visualiza il risultato'
+    }
+
+
+  },1000);
+
+  //definisco la funzio che al click del pulsante mi recupera
+  //i numeri che l'utente ha inserito e controla quali sono presente
+  //nel array di quelli generate casulmente
+
+  const confirm= (e)=> {
+    e.preventDefault();
+  }
 
